@@ -1,0 +1,84 @@
+<html lang="en">
+
+    <head>
+
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- documentation at http://getbootstrap.com/docs/4.1/, alternative themes at https://bootswatch.com/ -->
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+
+        <link href="/static/styles.css" rel="stylesheet">
+
+        <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+
+        <title>NAHS Knight Clicker</title>
+
+    </head>
+
+    <body>
+
+        <nav class="navbar navbar-expand-md">
+            <div class="navbar-header">
+                <a class="navbar-brand title" style="align-self: center;" href="/">NAHS Knight Clicker</a>
+            </div>
+        </nav>
+ 
+        <div class="row">
+            <div class="totals"><p class="bordered colored">Freshmen: {{  Freshmen  }}</p></div>
+            <div class="totals"><p class="bordered colored">Sophomores: {{  Sophomores  }}</p></div>
+            <div class="totals"><p class="bordered colored">Juniors: {{  Juniors  }}</p></div>
+            <div class="totals"><p class="bordered colored">Seniors: {{ Seniors }}</p></div>
+        </div>
+
+     <p class="instructions" style="text-align:center;">
+        <b>Instructions:<br>
+        1. Select your grade!<br> 
+        2. Click away!<br>
+        3. Press submit to add your score to your class total!<br>
+        CLASS WITH THE MOST CLICKS AT THE END OF THE WEEK WINS SPIRIT WEEK POINTS!!!</b>
+    </p>
+
+    <div class="game bordered">
+        <div class="bordered display colored">
+            <div>
+                <p style="float:left;">Score:</p>
+                <p id="counted">0</p>
+            </div>
+            <div>
+                <form class="form" action="/" method="post">
+                    <input type="hidden" id="score" value=0 name="score">
+                    <label for="grade">Grade:</label>
+                    <select name="grade" required>
+                        <option value="">Please Select Grade</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        <div>
+            <img src="static/KnightHead.jpg" alt="Knight Head" id="knight">
+        </div>
+    </div>
+
+    </body>
+
+    <script>
+        document.getElementById ("knight").addEventListener ("click", updateCounter, false);
+            var count = 0;
+            function updateCounter() {
+                count++;
+                document.getElementById("counted").innerHTML = count;
+                document.getElementById("score").value = count;
+            }
+
+    </script>
+
+</html>

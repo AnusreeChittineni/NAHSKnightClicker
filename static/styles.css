@@ -1,0 +1,172 @@
+nav
+{
+    background-color: #000000;
+}
+
+nav .navbar-brand
+{
+    /* size for brand */
+    font-size: x-large;
+}
+
+/* colors for brand */
+nav .navbar-brand .red
+{
+    color: #ea433b;
+}
+
+
+main .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+main
+{
+    /* scroll horizontally as needed */
+    overflow-x: auto;
+
+    /* center contents */
+    text-align: center;
+}
+
+main img
+{
+    /* constrain images on small screens */
+    max-width: 100%;
+}
+
+
+.btn
+{
+    color: red;
+    background-color: #000000;
+
+}
+
+.btn:hover
+{
+    color: white;
+}
+
+.left
+{
+    text-align: left;
+}
+
+div
+{
+    text-align: center;
+}
+
+.totals
+{
+    width:auto;
+    margin: auto;
+    float:left;
+    padding: 20px;
+}
+
+.row
+{
+   width: auto;
+   margin: auto;
+   padding: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after
+{
+  content: "";
+  display: table;
+  clear: both;
+  width: 100%;
+}
+
+.bordered
+{
+  border: 2px solid black;
+  border-radius: 5px;;
+}
+
+p
+{
+    padding:10px;
+    color: red;
+}
+
+.game
+{
+    width: auto;
+    margin-left: 15%;
+    margin-right: 15%;
+    padding: 5px;
+    text-align: center;
+}
+
+.red
+{
+    color: red;
+
+}
+
+#counted
+{
+    float: left;
+    color: red;
+    margin-block-end: 0px;
+}
+
+form
+{
+    margin-block-end: 0px;
+    color: red;
+}
+
+.title
+{
+  color:red;
+  text-align:center; 
+}
+
+.title:hover
+{
+    color:red;
+}
+
+.form
+{
+    padding: 5px;
+    
+}
+
+.colored
+{
+    background-color: #000000;
+}
+
+.display
+{
+    padding:0px;
+}
+
+.navbar-header {
+    float: left;
+    text-align: center;
+    width: 100%;
+}
+.navbar-brand {
+    float:none;
+    font-size: xx-large;
+}
+
+#knight
+{
+    width:auto;
+    height:35%; 
+    padding-top:10px;
+}

@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+
+{% block main %}
+
+    <div>
+    <p class="instructions" style="text-align:center;">
+        <b>Instructions:<br>
+        1. Select your grade!<br> 
+        2. Click away!<br>
+        3. Press submit to add your score to your class total!<br>
+        CLASS WITH THE MOST CLICKS AT THE END OF THE WEEK WINS SPIRIT WEEK POINTS!!!</b>
+    </p>
+    </div>
+
+    <div class="game bordered">
+        <div class="bordered display colored">
+            <div>
+                <p style="float:left;">Score:</p>
+                <p id="counted">0</p>
+            </div>
+            <div>
+                <form class="form" action="/" method="post">
+                    <input type="hidden" id="score" value=0 name="score">
+                    <label for="grade">Grade:</label>
+                    <select name="grade">
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
+        </div>
+        <div>
+            <img src="static/KnightHead.jpg" alt="Knight Head" style="width:auto;height:auto;padding-top:10px" id="knight">
+        </div>
+    </div>
+
+    <script>
+        document.getElementById ("knight").addEventListener ("click", updateCounter, false);
+            var count = 0;
+            function updateCounter() {
+                count++;
+                document.getElementById("counted").innerHTML = count;
+                document.getElementById("score").value = count;
+            }
+
+    </script>
+{% endblock %}
+
+{% if get_flashed_messages() %}
+            <header>
+                <div class="alert alert-primary border text-center" role="alert">
+                    {{ get_flashed_messages() | join(" ") }}
+                </div>
+            </header>
+        {% endif %}
+
+        <main class="container-fluid p-6">
+            {% block main %}{% endblock %}
+        </main>
